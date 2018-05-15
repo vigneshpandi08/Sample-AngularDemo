@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-app>
+    <div ng-init="firstName='Vicky';lastName='Pandy'">
+        <p>The full name is: <bold>{{ firstName + " " + lastName }}</bold></p>
+    </div>
+    <div ng-init="fName='Vignesh';lName='Pandi'">
+        <p>The full name is: <span ng-bind="fName + ' ' + lName"></span></p>
+    </div>
+    <div ng-init="person={Name:'Vignesh'}">
+        <p>The name is {{ person.Name }}</p>
+    </div>
+    <div>
+        <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+        <h1>Hello {{name}}</h1>
+    </div>
+
+    <div>
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p ng-bind="name"></p>
+    </div>
+
+    <div ng-show="false" ng-init="quantity=1;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+    </div>
+    <div ng-show="true" ng-init="quantity=2;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+    </div>
+    <div ng-hide="false" ng-init="quantity=2;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+    </div>
+    <div ng-hide="true" ng-init="quantity=2;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+    </div>
+    <div ng-init="values=[5,9,13,16,20,25]">
+        <ul ng-repeat="x in values">
+            <li>{{x}}</li>
+        </ul>
+        <hr />
+        <ul ng-repeat="x in values">
+            <li ng-if="x>15">{{x}}</li>
+        </ul>
+        <hr />
+        <ul ng-repeat="x in values">
+            <li ng-if="x<15">{{x}}</li>
+        </ul>
+        <input type="radio" ng-model="Gender" value="Male" />Male
+        <input type="radio" ng-model="Gender" value="FeMale" />FeMale
+        You have selected Gender:{{Gender}}
+        <input type="checkbox" ng-true-value="'Ok'" ng-false-value="'No'" ng-model="click"/>I Agree....{{click}}
+        <!--<select ng-model="Opt">
+            <option>select</option>
+            <option ng-repeat="x in values" value="{{x}}">{{x}}</option>
+        </select>-->
+        <select multiple="multiple" ng-model="Opt" ng-options="x for x in values"></select>
+        {{Opt}}
+    </div>
+
+</body>
+</html>
+<script src="Scripts/angular.min.js"></script>

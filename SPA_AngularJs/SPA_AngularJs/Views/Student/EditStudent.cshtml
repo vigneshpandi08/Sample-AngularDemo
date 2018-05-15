@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Edit Student";
+}
+<table><tr><td height="10px"></td></tr></table>
+
+<table cellpadding="4" cellspacing="4" width="70%" align="center" style="background-color: skyblue; border:solid 2px red; padding-top:20px;">
+    <tr><td colspan="3" style="background-color:gray; font-size:18pt; font-weight:bold; height:30px; text-align:center;">Edit Student Information</td></tr>
+    <tr>
+
+        <td style="text-align:right;width:40%">Student ID</td>
+        <td><input type="text" ng-model="Student.studentID" />  </td>
+    </tr>
+    <tr>
+
+        <td style="text-align:right;">Name</td>
+        <td><input type="text" ng-model="Student.name" />  </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">Email</td>
+        <td><input type="email" ng-model="Student.email" />  </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">Class</td>
+        <td><input type="text" ng-model="Student.class" />  </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">City</td>
+        <td>
+            <select name="dropdown" ng-model="Student.city" data-ng-options="x.cityname as x.cityname for x in CityLists"></select>
+            {{Student.city}}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">City1</td>
+        <td>
+            <select multiple="multiple" ng-model="Student.city1">
+                <option ng-repeat="x in CityLists" value="{{x.id}}">
+                {{x.cityname}}
+            </option>
+            </select>
+            {{Student.city1}}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">DOB</td>
+        <td><input type="date" ng-model="Student.dob" />  </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">Gender</td>
+        <td>
+            <input type="radio" ng-model="Student.gender" value="Male" />Male
+            <input type="radio" ng-model="Student.gender" value="FeMale" />FeMale
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">Mark</td>
+        <td><input type="text" ng-model="Student.mark" />  </td>
+    </tr>
+    <tr>
+        <td style="text-align:right;">MobileNo</td>
+        <td><input type="tel" ng-model="Student.mobileno" />  </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="padding-left:7.5%">
+            <input type="button" value="Save" ng-click="save()" />
+            <br />
+            <div>{{error}}</div>
+        </td>
+    </tr>
+
+</table>

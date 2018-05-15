@@ -1,0 +1,40 @@
+﻿<table><tr><td height="10px"></td></tr></table>
+<table cellpadding="4" cellspacing="4" width="100%" align="center"
+       style="background-color: skyblue; border:solid 2px red; padding-top:20px;">
+    <thead>
+        <tr style="background-color:#F5F5F5;">
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Class</th>
+            <th>City</th>
+            <th>City1</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Mark</th>
+            <th>MobileNo</th>
+            <th>Resume</th>
+            <th>Car</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="Stud in Students">
+            <td>{{Stud.studentID}}</td>
+            <td>{{Stud.name}}</td>
+            <td>{{Stud.email}}</td>
+            <td>{{Stud.class}}</td>
+            <td>{{Stud.city}}</td>
+            <td>{{Stud.city1}}</td>
+            <td>{{Stud.dob | date : 'dd/MM/yyyy'}}</td>
+            <td>{{Stud.gender}}</td>
+            <td>{{Stud.mark}}</td>
+            <td>{{Stud.MobileNo}}</td>
+            <td>{{Stud.Resume}}</td>
+            <td>{{Stud.Car}}</td>
+            <td><a ng-click="editStudent(Stud.studentID)">Edit</a></td>
+            <td><a ng-click="deleteStudent(Stud.studentID)">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

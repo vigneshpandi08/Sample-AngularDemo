@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Add New Student";
+}
+@*<style>
+    /* Put your css in here */
+
+    multiselect {
+        display: block;
+    }
+
+        multiselect .btn {
+            width: 100%;
+            background-color: #FFF;
+        }
+
+            multiselect .btn.error {
+                border: 1px solid #da4f49 !important;
+            }
+
+        multiselect .dropdown-menu {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        multiselect .dropdown-menu {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+            multiselect .dropdown-menu > li > a {
+                padding: 3px 10px;
+                cursor: pointer;
+            }
+</style>
+<div ng-app="plunker">
+
+    <script src="~/MyScripts/multiselect.js"></script>
+    <script src="~/MyScripts/new.js"></script>*@
+    <table><tr><td height="10px"></td></tr></table>
+    @*<div ng-controller="MainCtrl">*@
+        <table cellpadding="4" cellspacing="4" width="70%" align="center" style="background-color: skyblue;
+border:solid 2px red; padding-top:20px;">
+            <tr>
+                <td colspan="3" style="background-color:gray; font-size:18pt;
+font-weight:bold; height:30px; text-align:center;">
+                    Add New Student
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:40%">Name</td>
+                <td><input type="text" ng-model="Name" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Email</td>
+                <td><input type="email" ng-model="Email" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Class</td>
+                <td><input type="text" ng-model="Class" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">City</td>
+                <td>
+                    <select name="dropdown" ng-model="City" data-ng-options="x.cityname as x.cityname for x in CityLists | orderBy:'cityname'"></select>
+                    {{City}}
+                </td>
+                @*<td>
+                        <select name="dropdown" ng-model="City" data-ng-options="c.name as c.name for c in cars | orderBy:'name'"></select>
+                        {{City}}
+                    </td>*@
+                @*<td>
+                        <select name="dropdown">
+                            <option ng-model="City" ng-repeat="x in CityLists" ng-value="x.cityname">{{x.cityname}}</option>
+                        </select>
+                        {{City}}
+                    </td>*@
+
+                @*<td>
+                        <select name="dropdown" multiple>
+                            <option data-ng-repeat="x in CityLists | orderBy:'cityname'" ng-value="x.cityname">
+                                {{x.cityname}}
+                            </option>
+                        </select>
+                        {{City}}
+                    </td>*@
+            </tr>
+            <tr>
+                <td style="text-align:right;">City1</td>
+                <td>
+                    @*<select multiple="multiple" ng-model="City1" data-ng-options="x.cityname for x in CityLists" value="{{x.id}}" ng-selected="{{City1.indexOf(x.id.toString())!=-1}}">{{x.cityname}}></select>
+                        {{City1}}*@
+                    @*<select multiple="" name="multiple" id="id" ng-model="City1">
+                            <option ng-repeat=" x in CityLists" value="{{x.cityname}}">{{x.cityname}}</option>
+                        </select>
+                        {{City1}}*@
+                    <select multiple="multiple" ng-model="City1">
+                        <option ng-repeat="x in CityLists" value="{{x.id}}">
+                            {{x.cityname}}
+                        </option>
+                    </select>
+                    {{City1}}
+                    @*<select multiple="multiple" ng-model="City1">
+                            <option ng-repeat="x in CityLists" value="{{x.cityname}}">
+                                {{x.cityname}}
+                            </option>
+                        </select>*@
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Resume</td>
+                <td>
+                    <input type="file" ng-model="Resume" />
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">DOB</td>
+                <td><input type="date" ng-model="DOB" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Gender</td>
+                <td>
+                    <input type="radio" ng-model="Gender" value="Male" checked />Male
+                    <input type="radio" ng-model="Gender" value="Female" />FeMale
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Mark</td>
+                <td><input type="text" ng-model="Mark" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">MobileNo</td>
+                <td><input type="tel" ng-model="MobileNo" />  </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Car</td>
+                <td>
+                    <label ng-repeat="x in cars">
+                            <input type="checkbox" ng-model="x.Car" />
+                            {{x.name}}
+                        </label>
+                    @*<multiselect multiple="true"
+                                 ng-model="Car"
+                                 options="c.name for c in cars"></multiselect>
+                    {{Car}}*@
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="padding-left:7.5%">
+                    <input type="button" value="Save" data-ng-click="save()" />
+                </td>
+            </tr>
+
+        </table>
+    @*</div>
+</div>*@
